@@ -60,10 +60,15 @@ class PitchTracker: RCTEventEmitter {
             return
         }
         for i in 0...87 {
-            if(nowKeys[i] > 4) {
+            if(nowKeys[i] > 10) {
                 sendEvent(withName: "NoteOn", body: ["midiNum": i+21])
             }
+            if (prevKeys[i] < 11 && nowKeys[i] == 0){
+                sendEvent(withName: "NoteOff", body: ["midiNum": i+21])
+            }
+            
         }
+        prevKeys = nowKeys
     }    
 
     override func supportedEvents() -> [String]! {
