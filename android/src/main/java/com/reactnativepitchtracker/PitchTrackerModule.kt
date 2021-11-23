@@ -30,7 +30,7 @@ class PitchTrackerModule(reactContext: ReactApplicationContext) : ReactContextBa
     private val SAMPLE_RATE = 16000
     private val RECORDING_LENGTH = 17920 //(SAMPLE_RATE * SAMPLE_DURATION_MS / 1000)
     private val MINIMUM_TIME_BETWEEN_SAMPLES_MS: Long = 30
-    private val MODEL_FILENAME = "file:///android_asset/onsets_frames_wavinput.tflite"
+    private val MODEL_FILENAME = "file:///android_asset/onsets_frames_wavinput_no_offset_uni.tflite"
 
     // Working variables.
     var recordingBuffer = ShortArray(RECORDING_LENGTH)
